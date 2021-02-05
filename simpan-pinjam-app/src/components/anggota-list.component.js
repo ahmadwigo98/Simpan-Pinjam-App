@@ -81,7 +81,6 @@ class ListAnggotaComponent extends Component {
                             ))}
                         </tbody>
                     </table>
-
                 </div>
             </div>
         )
