@@ -64,7 +64,6 @@ public class ControllerTransaksi {
             newTransaksi.setAnggota(anggotaTransaksi.get());
 
             repositoryTransaksi.save(newTransaksi);
-
             // Add to mongoDB
             Boolean isAnggotaExist = repositoryHistoriTransaksiAnggota.existsById(idAnggota);
             System.out.println(isAnggotaExist);
