@@ -71,19 +71,21 @@ public class ControllerTransaksi {
 
             if (isAnggotaExist) {
                 System.out.println("MASUK GAK? 1");
+                System.out.println(newTransaksi);
 
                 Optional<HistoryTransaksiAnggota> historiTransaksi = repositoryHistoriTransaksiAnggota
                         .findById(idAnggota);
 
-                List<Transaksi> transaksiAnggota = historiTransaksi.get().getTransaksi();
-                transaksiAnggota.add(newTransaksi);
-                historiTransaksi.get().setTransaksi(transaksiAnggota);
+                System.out.println("MASUK GAK? 2");
+                historiTransaksi.get().getTransaksi().add(newTransaksi);
+                System.out.println("MASUK GAK? 3");
 
                 repositoryHistoriTransaksiAnggota.save(historiTransaksi.get());
 
                 System.out.println(historiTransaksi.get().toString());
             } else {
-                System.out.println("MASUK GAK? 2");
+                System.out.println("MASUK GAK? 4");
+                System.out.println(newTransaksi);
 
                 HistoryTransaksiAnggota historiTransaksi = new HistoryTransaksiAnggota();
                 historiTransaksi.setId(anggotaTransaksi.get().getId());
@@ -91,11 +93,12 @@ public class ControllerTransaksi {
                 historiTransaksi.setTanggal_lahir(anggotaTransaksi.get().getTanggal_lahir());
                 historiTransaksi.setAlamat(anggotaTransaksi.get().getAlamat());
 
-                System.out.println(newTransaksi);
+                System.out.println("MASUK GAK? 5");
+                ArrayList<Transaksi> riwayatTransaksi = new ArrayList<Transaksi>();
+                riwayatTransaksi.add(newTransaksi);
 
-                List<Transaksi> transaksiAnggota = new ArrayList<Transaksi>();
-                transaksiAnggota.add(newTransaksi);
-                historiTransaksi.setTransaksi(transaksiAnggota);
+                historiTransaksi.setTransaksi(riwayatTransaksi);
+                System.out.println("MASUK GAK? 6");
 
                 repositoryHistoriTransaksiAnggota.save(historiTransaksi);
 
