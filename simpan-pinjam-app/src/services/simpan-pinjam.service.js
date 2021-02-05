@@ -28,22 +28,6 @@ class SimpanPinjamDataService {
     getHistoriTransaksi() {
         return http.get("/getHistoriTransaksiAnggota");
     }
-
-    // get(id) {
-    //     return http.get(`/tutorials/${id}`);
-    // }
-
-    // delete(id) {
-    //     return http.delete(`/tutorials/${id}`);
-    // }
-
-    // deleteAll() {
-    //     return http.delete(`/tutorials`);
-    // }
-
-    // findByTitle(title) {
-    //     return http.get(`/tutorials?title=${title}`);
-    // }
 }
 
 export default new SimpanPinjamDataService();

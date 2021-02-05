@@ -98,7 +98,6 @@ public class ControllerTransaksi {
 
                 historiTransaksi.setTransaksi(riwayatTransaksi);
                 System.out.println("MASUK GAK? 6");
-
                 repositoryHistoriTransaksiAnggota.save(historiTransaksi);
 
                 System.out.println(historiTransaksi.toString());
