@@ -1,12 +1,8 @@
 package com.alamiShariahtest.demo.model;
 
-import java.io.Serializable;
-import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.*;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -16,10 +12,7 @@ public class HistoryTransaksiAnggota {
 
     @Id
     private long id;
-    private String nama;
-    private Date tanggal_lahir;
-    private String alamat;
-
+    private String namaAnggotaBertransaksi;
     // Foreign key
 
     // One-to-Many
@@ -27,6 +20,7 @@ public class HistoryTransaksiAnggota {
     private List<Transaksi> transaksi;
 
     // Setter dan Getter
+
     public long getId() {
         return id;
     }
@@ -35,28 +29,12 @@ public class HistoryTransaksiAnggota {
         this.id = id;
     }
 
-    public String getNama() {
-        return nama;
+    public String getNamaAnggotaBertransaksi() {
+        return namaAnggotaBertransaksi;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public Date getTanggal_lahir() {
-        return tanggal_lahir;
-    }
-
-    public void setTanggal_lahir(Date tanggal_lahir) {
-        this.tanggal_lahir = tanggal_lahir;
-    }
-
-    public String getAlamat() {
-        return alamat;
-    }
-
-    public void setAlamat(String alamat) {
-        this.alamat = alamat;
+    public void setNamaAnggotaBertransaksi(String namaAnggotaBertransaksi) {
+        this.namaAnggotaBertransaksi = namaAnggotaBertransaksi;
     }
 
     public List<Transaksi> getTransaksi() {
@@ -71,20 +49,19 @@ public class HistoryTransaksiAnggota {
         this.transaksi.add(transaksi);
     }
 
-    @Override
-    public String toString() {
-        return "Tutorial [id=" + id + ", nama=" + nama + ", tanggal_lahir=" + tanggal_lahir + ", alamat=" + alamat
-                + "]";
-    }
-
-    public HistoryTransaksiAnggota(long id, String nama, Date tanggal_lahir, String alamat, List<Transaksi> transaksi) {
+    public HistoryTransaksiAnggota(long id, String namaAnggotaBertransaksi, List<Transaksi> transaksi) {
         this.id = id;
-        this.nama = nama;
-        this.tanggal_lahir = tanggal_lahir;
-        this.alamat = alamat;
+        this.namaAnggotaBertransaksi = namaAnggotaBertransaksi;
         this.transaksi = transaksi;
     }
 
     public HistoryTransaksiAnggota() {
     }
+
+    @Override
+    public String toString() {
+        return "HistoryTransaksiAnggota [id=" + id + ", namaAnggotaBertransaksi=" + namaAnggotaBertransaksi
+                + ", transaksi=" + transaksi + "]";
+    }
+
 }

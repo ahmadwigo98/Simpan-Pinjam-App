@@ -68,8 +68,7 @@ public class Anggota implements Serializable {
 
     @Override
     public String toString() {
-        return "Tutorial [id=" + id + ", nama=" + nama + ", tanggal_lahir=" + tanggal_lahir + ", alamat=" + alamat
-                + "]";
+        return "Anggota [id=" + id + ", nama=" + nama + ", tanggal_lahir=" + tanggal_lahir + ", alamat=" + alamat + "]";
     }
 
     public List<Transaksi> getTransaksi() {

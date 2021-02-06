@@ -2,6 +2,7 @@ package com.alamiShariahtest.demo.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Date;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -63,9 +64,12 @@ public class ControllerTransaksi {
             Optional<Anggota> anggotaTransaksi = repositoryAnggota.findById(idAnggota);
             newTransaksi.setAnggota(anggotaTransaksi.get());
 
+            System.out.println("MASUK GAK? X");
             repositoryTransaksi.save(newTransaksi);
             // Add to mongoDB
+            System.out.println("MASUK GAK? Y");
             Boolean isAnggotaExist = repositoryHistoriTransaksiAnggota.existsById(idAnggota);
+            System.out.println("MASUK GAK? Z");
             System.out.println(isAnggotaExist);
 
             if (isAnggotaExist) {
@@ -84,15 +88,13 @@ public class ControllerTransaksi {
                 System.out.println(historiTransaksi.get().toString());
             } else {
                 System.out.println("MASUK GAK? 4");
-                System.out.println(newTransaksi);
 
                 HistoryTransaksiAnggota historiTransaksi = new HistoryTransaksiAnggota();
                 historiTransaksi.setId(anggotaTransaksi.get().getId());
-                historiTransaksi.setNama(anggotaTransaksi.get().getNama());
-                historiTransaksi.setTanggal_lahir(anggotaTransaksi.get().getTanggal_lahir());
-                historiTransaksi.setAlamat(anggotaTransaksi.get().getAlamat());
-
+                historiTransaksi.setNamaAnggotaBertransaksi(anggotaTransaksi.get().getNama());
+                // java.sql.date tanggal_lahir = new java.sql.date();
                 System.out.println("MASUK GAK? 5");
+
                 ArrayList<Transaksi> riwayatTransaksi = new ArrayList<Transaksi>();
                 riwayatTransaksi.add(newTransaksi);
 

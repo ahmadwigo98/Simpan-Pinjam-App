@@ -90,20 +90,16 @@ class ListHistoriTransaksiComponent extends Component {
               {this.state.historiTransaksis.map((anggotaTransaksi, index) => (
                 <tr key={anggotaTransaksi.id}>
                   <td rowSpan={anggotaTransaksi.transaksi.length - 1}>{index + 1}</td>
-                  <td rowSpan={anggotaTransaksi.transaksi.length - 1}>{anggotaTransaksi.nama}</td>
-                  {anggotaTransaksi.transaksi.map((item, i) => (
+                  <td rowSpan={anggotaTransaksi.transaksi.length - 1}>{anggotaTransaksi.namaAnggotaBertransaksi}</td>
+                  {/* {anggotaTransaksi.transaksi.map((item, i) => (
                     <tr>
                       <td>
-                        {new Intl.DateTimeFormat('en-GB', {
-                          month: 'long',
-                          day: '2-digit',
-                          year: 'numeric',
-                        }).format(new Date(item.tanggal_transaksi))}
+                        {item.tanggal_transaksi}
                       </td>
                       <td>{item.status}</td>
                       <td>{item.nominal}</td>
                     </tr>
-                  ))}
+                  ))} */}
                 </tr>
               ))}
             </tbody>

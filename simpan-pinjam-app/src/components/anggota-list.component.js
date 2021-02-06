@@ -75,7 +75,7 @@ class ListAnggotaComponent extends Component {
                                     </td>
                                     <td>{anggota.alamat}</td>
                                     <td>
-                                        <button onClick={() => this.updateAnggota(anggota.id, anggota)} className="btn btn-success">Edit</button>
+                                        <button onClick={() => this.updateAnggota(anggota.id, anggota)} className="btn btn-success btn-sm">Edit</button>
                                     </td>
                                 </tr>
                             ))}

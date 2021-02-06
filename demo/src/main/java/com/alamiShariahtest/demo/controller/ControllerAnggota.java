@@ -49,9 +49,15 @@ public class ControllerAnggota {
 
         System.out.println("test get mongodb");
         BaseResponse<List<HistoryTransaksiAnggota>> response = new BaseResponse<List<HistoryTransaksiAnggota>>();
+        System.out.println("test get mongodb masuk gak");
         response.setStatus(200);
+        System.out.println("test get mongodb masuk gak 1");
         response.setMessage("Berhasil Mengambil Histori Transaksi Anggota");
+        System.out.println("test get mongodb masuk gak 2");
+        System.out.println(repositoryHistoriTransaksiAnggota.findAll().toString());
+        System.out.println("test get mongodb masuk gak 3");
         response.setResult(repositoryHistoriTransaksiAnggota.findAll());
+        System.out.println("test get mongodb masuk gak 4");
 
         return response;
     }
