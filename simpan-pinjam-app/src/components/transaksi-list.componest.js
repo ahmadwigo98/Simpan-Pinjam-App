@@ -45,7 +45,7 @@ class ListTransaksiComponent extends Component {
         </div>
         <br></br>
         <div className="row">
-          <table id="table-transaksi" className="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+          <table id="table-transaksi" className="table table-hover table-striped table-bordered table-sm" cellspacing="0" width="100%">
             <thead>
               <tr>
                 <th>Tanggal Transaksi</th>

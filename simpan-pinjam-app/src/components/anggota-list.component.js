@@ -53,7 +53,7 @@ class ListAnggotaComponent extends Component {
                 </div>
                 <br></br>
                 <div className="row">
-                    <table id="table-anggota" class="table table-striped table-bordered table-sm">
+                    <table id="table-anggota" class="table table-hover table-striped table-bordered table-sm">
                         <thead>
                             <tr>
                                 <th>Nama</th>

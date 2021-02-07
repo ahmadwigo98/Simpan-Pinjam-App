@@ -76,7 +76,7 @@ class ListHistoriTransaksiComponent extends Component {
         <h2 className="text-center">Riwayat Transaksi Anggota</h2>
         <br></br>
         <div className="row">
-          <table id="table-anggota" class="table table-striped table-bordered table-sm">
+          {/* <table id="table-anggota" class="table table-striped table-bordered table-sm">
             <thead>
               <tr>
                 <th>No</th>
@@ -91,7 +91,7 @@ class ListHistoriTransaksiComponent extends Component {
                 <tr key={anggotaTransaksi.id}>
                   <td rowSpan={anggotaTransaksi.transaksi.length - 1}>{index + 1}</td>
                   <td rowSpan={anggotaTransaksi.transaksi.length - 1}>{anggotaTransaksi.namaAnggotaBertransaksi}</td>
-                  {/* {anggotaTransaksi.transaksi.map((item, i) => (
+                  {anggotaTransaksi.transaksi.map((item, i) => (
                     <tr>
                       <td>
                         {item.tanggal_transaksi}
@@ -99,13 +99,47 @@ class ListHistoriTransaksiComponent extends Component {
                       <td>{item.status}</td>
                       <td>{item.nominal}</td>
                     </tr>
-                  ))} */}
+                  ))}
                 </tr>
+              ))}
+            </tbody>
+          </table> */}
+          <table id="table-anggota" class="table table-hover table-bordered table-sm">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Tanggal Transaksi</th>
+                <th>Status Transaksi</th>
+                <th>Nominal Transaksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.historiTransaksis.map((anggotaTransaksi, index) => (
+                <Fragment>
+                  <tr key={anggotaTransaksi.id}>
+                    <td className="align-middle" rowSpan={anggotaTransaksi.transaksi.length + 1}>{index + 1}</td>
+                    <td className="align-middle" rowSpan={anggotaTransaksi.transaksi.length + 1}>{anggotaTransaksi.namaAnggotaBertransaksi}</td>
+                  </tr>
+                  {anggotaTransaksi.transaksi.map(item => (
+                    <tr>
+                      <td>
+                        {new Intl.DateTimeFormat('en-GB', {
+                          month: 'long',
+                          day: '2-digit',
+                          year: 'numeric',
+                        }).format(new Date(item.tanggal_transaksi))}
+                      </td>
+                      <td>{item.status}</td>
+                      <td>{item.nominal}</td>
+                    </tr>
+                  ))}
+                </Fragment>
               ))}
             </tbody>
           </table>
         </div>
-      </div>
+      </div >
     )
   }
 }
